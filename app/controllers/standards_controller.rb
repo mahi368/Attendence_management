@@ -5,7 +5,6 @@ class StandardsController < ApplicationController
 
   # standards/show.html.erb in views
   def show 
-    byebug
     @student = @standard.users
     @students = if params[:q].present?
                   @student.search(params[:q]).records
