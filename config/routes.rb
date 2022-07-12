@@ -13,4 +13,8 @@ Rails.application.routes.draw do
       get :download_pdf
     end 
   end
+
+  devise_scope :users do
+    match 'users/logout'  => 'devise/sessions#destroy', via: [:delete,:post]
+  end
 end
